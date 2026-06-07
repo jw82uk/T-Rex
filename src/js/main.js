@@ -1,5 +1,5 @@
 // Imports
-import { SETTINGS } from './constants.js';
+// import { SETTINGS } from './constants.js';
 import { initTabs } from './tabs.js';
 
 document.addEventListener('DOMContentLoaded', () => {
