@@ -1,0 +1,15 @@
+@use 'sass:map'; // Load the built-in map module
+@use '../abstracts/index' as *;
+
+// Global custom properties
+:root {
+  // Colours
+  @each $name, $value in $theme-tokens {
+    --#{$name}: #{$value};
+  }
+
+  // Spacers
+  @each $level, $value in $all-spacers {
+    --space-#{$level}: #{$value};
+  }
+}

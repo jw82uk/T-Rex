@@ -1,0 +1,20 @@
+# 1. Dependency folder (Huge and easily recreated)
+node_modules/
+
+# 2. Build output (Parcel's final files)
+dist/
+
+# 3. Parcel's internal cache (The source of many glitches!)
+.parcel-cache/
+
+# 4. OS metadata
+.DS_Store
+Thumbs.db
+
+# 5. Environment secrets (If you use them later)
+.env
+.env.local
+
+# 6. Log files
+npm-debug.log*
+yarn-error.log*

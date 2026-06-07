@@ -1,0 +1,64 @@
+@use 'sass:map'; // Load the built-in map module
+@use 'variables' as *;
+
+/* 
+  Media queries
+  @include mq(md) === @media (min-width: 768px)
+  @include mq(md, max) === @media (max-width: 767.98px)
+*/
+@mixin mq($size, $type: min) {
+  // Get the breakpoint size in px
+  $width: map.get($breakpoints, $size);
+
+  // Check if the size exists
+  @if $width {
+    $final-width: $width;
+
+    // If a max width mq, subtract 0.02px
+    @if $type == max {
+      $final-width: $width - 0.02px;
+    }
+
+    // Create media query containing the style rules
+    @media (#{$type}-width: $final-width) {
+      @content;
+    }
+  } @else {
+    @error "Screen size '#{$size}' not found.";
+  }
+}
+
+/*
+  Text style
+  $level is a key from the $type-scale variable
+  Usage example: @include text-scale(5);
+*/
+@mixin text-scale($level) {
+  // Checks if $type-scale contains the given level
+  @if map.has-key($type-scale, $level) {
+    // Get the mini-map for the required level
+    $data: map.get($type-scale, $level);
+
+    // Create the CSS rules
+    font-size: map.get($data, 'size');
+    line-height: map.get($data, 'line-height');
+  } @else {
+    // Warn if an incorrect level is provided
+    @warn "Type level '#{$level}' not found.";
+  }
+}
+
+/*
+  Visually hidden
+*/
+@mixin visually-hidden {
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}

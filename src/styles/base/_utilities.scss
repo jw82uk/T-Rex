@@ -1,0 +1,15 @@
+@use '../abstracts/index' as *;
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 0 25px;
+}
+
+strong {
+  font-weight: 700;
+}

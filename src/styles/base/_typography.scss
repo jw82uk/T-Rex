@@ -1,0 +1,7 @@
+@use '../abstracts/index' as *;
+
+body {
+  @include text-scale(3);
+
+  color: var(--text-color);
+}

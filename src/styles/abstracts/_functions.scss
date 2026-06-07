@@ -1,0 +1,12 @@
+@use './variables' as *;
+
+/*
+  Spacer function
+  Generates a CSS Variable Reference
+  Examples: 
+    space(2) === var(--space-2);
+    space(n4) === var(--space-n4);
+*/
+@function space($level) {
+  @return var(--space-#{$level});
+}

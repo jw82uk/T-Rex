@@ -1,0 +1,38 @@
+{
+  "name": "t-rex",
+  "homepage": "https://jw82uk.github.io/t-rex/",
+  "version": "1.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jw82uk/T-Rex.git"
+  },
+  "description": "Interactive site with modern CSS and bundled JS",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build src/index.html --public-url ./",
+    "clean": "rimraf .parcel-cache dist",
+    "lint:js": "eslint src/js",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:css:fix": "npm run lint:css -- --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@parcel/transformer-sass": "^2.16.3",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "10.1.8",
+    "globals": "^17.1.0",
+    "parcel": "~2.16.3",
+    "prettier": "3.8.1",
+    "rimraf": "~6.1.2",
+    "sharp": "^0.33.5",
+    "stylelint": "^17.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-order": "^7.0.1"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
