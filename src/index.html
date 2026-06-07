@@ -40,7 +40,18 @@
       <p>Anatomy of a T-Rex</p>
     </header>
 
-    <main class="main-content" id="main-content"></main>
+    <main class="main-content" id="main-content">
+      <div class="tab-container first-set">
+        <div role="tablist" aria-label="Project Sections">
+          <button role="tab" aria-selected="true" tabindex="0">Overview</button>
+          <button role="tab" aria-selected="false" tabindex="-1">
+            Specifications
+          </button>
+        </div>
+        <div role="tabpanel">Panel 1</div>
+        <div role="tabpanel" hidden>Panel 2</div>
+      </div>
+    </main>
 
     <footer class="footer"></footer>
 
